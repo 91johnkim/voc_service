@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>questions</title>
+</head>
+<body>
+    <h1>고객 문의 목록 조회 페이지</h1>
+    <button type="button" onclick="location.href='/questions/add'">작성하기</button>
+    <div id="list">
+
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded',()=>{
+        getList();
+    });
+
+    const url = "/api/v1/voc/questions/list";
+    const getList =()=>{
+        fetch(url)
+            .then(function (response){
+                return response.json();
+            })
+            .then(function(jsonData){
+                console.log(jsonData);
+            })
+            .catch(function (error){
+                console.log(error);
+            });
+    }
+</script>
+</html>

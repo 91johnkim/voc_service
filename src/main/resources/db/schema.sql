@@ -1,0 +1,17 @@
+
+
+CREATE TABLE COUNSELOR(
+    id VARCHAR NOT NULL,
+    password VARCHAR NOT NULL,
+    name VARCHAR NOT NULL,
+    created_at DATETIME NOT NULL,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE ROLE(
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    counselor_id VARCHAR NOT NULL,
+    name VARCHAR NOT NULL,
+    created_at DATETIME NOT NULL,
+    PRIMARY KEY(id)
+);
